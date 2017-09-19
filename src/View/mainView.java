@@ -5,11 +5,15 @@
  */
 package View;
 
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Brian Kamau
  */
 public class mainView extends javax.swing.JFrame {
+
 
     /**
      * Creates new form mainView
@@ -102,6 +106,20 @@ public class mainView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public JButton getAnswer(){
+        return submitGuess;
+    }
+    public JButton getnextWord(){
+        return nextWord;
+    }
+    public JTextField getScrambledWord(){
+        return scrambled_word;
+    }
+    public JTextField getUserWord(){
+        return txtAnswer;
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
