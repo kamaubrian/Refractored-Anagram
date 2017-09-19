@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.UnsupportedLookAndFeelException;
 import Model.*;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
@@ -36,6 +37,7 @@ public class GameStart{
     static StaticWords wordmodel = new StaticWords();
     static mainView mainV =  new mainView();
     static nextWordHandler words = new nextWordHandler();
+    static checkWordHandler checkword = new checkWordHandler();
     static int wordindex=0;    
      
     public static void main(String [] args){
@@ -44,11 +46,13 @@ public class GameStart{
     }
     public static JFrame showMain(){
         mainV.setVisible(true);
+        mainV.setSize(new Dimension(470,305));
         mainV.setLocationRelativeTo(null);
         mainV.setResizable(false);
         mainV.getScrambledWord().setEditable(false);
         String initialvalue=wordmodel.getScrambledword(0).toString().toLowerCase();
         mainV.getScrambledWord().setText(initialvalue);
+        mainV.getAnswer().addActionListener(checkword);
         mainV.getnextWord().addActionListener(words);
         return mainV;
     }
@@ -67,6 +71,30 @@ public class GameStart{
             }
         }
         
+    }
+    
+    static class checkWordHandler implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            try{
+                if(wordmodel.Correct(wordindex, mainV.getUserWord().getText())==true){
+                    mainV.giveAnswer().setText("Correct Answer, Click Next for Next Word");
+                    mainV.getUserWord().setText("");
+                }else{
+                   mainV.giveAnswer().setText("InCorrect Answer,Try Again");
+                   mainV.getUserWord().setText("");
+
+                }
+                           
+        }catch(Exception ex){
+            System.out.println("Checking Word Handler"+ex.getMessage());
+    }
+        
+        
+        
+        
+        }
     }
     
 }
