@@ -8,14 +8,13 @@ package Model;
 /**
  * Refractor: -> Brian Kamau
  */
-public abstract class wordLibrary {
+public interface wordLibrary {
     
-    //Have Abstract Classes, that handle how words are handled in the program.
-    protected wordLibrary(){
-        
-        
-        
-    }
+    ///contains abstract methods
+    public String getWord(int index);
+    public String getScrambledword(int index);
+    public int getSize();
+    public boolean Correct(int index, String userGuess);
     
     
 }

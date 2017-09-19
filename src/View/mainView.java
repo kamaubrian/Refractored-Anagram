@@ -6,6 +6,7 @@
 package View;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
@@ -84,8 +85,8 @@ public class mainView extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -118,7 +119,9 @@ public class mainView extends javax.swing.JFrame {
     public JTextField getUserWord(){
         return txtAnswer;
     }
-    
+    public JLabel giveAnswer(){
+        return highlightAnswer;
+    }
     
     /**
      * @param args the command line arguments

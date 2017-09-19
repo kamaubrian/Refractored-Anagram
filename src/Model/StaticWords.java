@@ -9,7 +9,9 @@ package Model;
  *
  * @author Brian-Kamau
  */
-public final class StaticWords  extends wordLibrary{
+public final class StaticWords implements wordLibrary{
+    static final StaticWords wordLibrary = new StaticWords(); //I prototyped this class.
+    
     
     private static final String[] WORDS = {
          "abstraction",
@@ -105,5 +107,23 @@ public final class StaticWords  extends wordLibrary{
         "nuisngde",
         "rtdatioialn"
     };
+       @Override
+       public String getWord(int index){
+           return WORDS[index];
+       }
+       @Override
+       public String getScrambledword(int index){
+           return scrambledWord[index];
+       }
+       @Override
+       public int getSize(){
+           return WORDS.length;
+       }
+       @Override
+       public boolean Correct(int index, String userGuess){
+           return(userGuess.equals(getWord(index)));
+       }
+       
+       
        
 }
