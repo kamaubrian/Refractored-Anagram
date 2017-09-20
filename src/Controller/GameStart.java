@@ -13,9 +13,10 @@ import Model.*;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 /**
  *
- * @author root
+ * @author Brian-Kamau
  */
 public class GameStart{
     
@@ -50,7 +51,7 @@ public class GameStart{
         mainV.setLocationRelativeTo(null);
         mainV.setResizable(false);
         mainV.getScrambledWord().setEditable(false);
-        String initialvalue=wordmodel.getScrambledword(0).toString().toLowerCase();
+        String initialvalue=wordmodel.getScrambledword(0).toLowerCase();
         mainV.getScrambledWord().setText(initialvalue);
         mainV.getAnswer().addActionListener(checkword);
         mainV.getnextWord().addActionListener(words);
@@ -78,6 +79,7 @@ public class GameStart{
         @Override
         public void actionPerformed(ActionEvent e) {
             try{
+                if(!mainV.getUserWord().getText().isEmpty()){
                 if(wordmodel.Correct(wordindex, mainV.getUserWord().getText())==true){
                     mainV.giveAnswer().setText("Correct Answer, Click Next for Next Word");
                     mainV.getUserWord().setText("");
@@ -86,14 +88,13 @@ public class GameStart{
                    mainV.getUserWord().setText("");
 
                 }
+                }else{
+                    JOptionPane.showMessageDialog(mainV,"Please Enter Word");
+                }
                            
         }catch(Exception ex){
             System.out.println("Checking Word Handler"+ex.getMessage());
-    }
-        
-        
-        
-        
+    }       
         }
     }
     

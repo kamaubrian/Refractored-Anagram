@@ -12,7 +12,7 @@ package Model;
 public final class StaticWords implements wordLibrary{
     static final StaticWords wordLibrary = new StaticWords(); //I prototyped this class.
     
-    
+    //Words Have been Implemented from Netbeans Anagram Game
     private static final String[] WORDS = {
          "abstraction",
         "ambiguous",
