@@ -45,11 +45,11 @@ public class StaticWordsTest {
         System.out.println("getWord");
         int index = 0;
         StaticWords instance = new StaticWords();
-        String expResult = "";
+        String expResult = "abstraction";
         String result = instance.getWord(index);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -60,11 +60,10 @@ public class StaticWordsTest {
         System.out.println("getScrambledword");
         int index = 0;
         StaticWords instance = new StaticWords();
-        String expResult = "";
+        String expResult = "batsartcoin";
         String result = instance.getScrambledword(index);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -74,11 +73,10 @@ public class StaticWordsTest {
     public void testGetSize() {
         System.out.println("getSize");
         StaticWords instance = new StaticWords();
-        int expResult = 0;
+        int expResult = 45;
         int result = instance.getSize();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -93,8 +91,7 @@ public class StaticWordsTest {
         boolean expResult = false;
         boolean result = instance.Correct(index, userGuess);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
     
 }
